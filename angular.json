@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "company-frontend"
+  "defaultProject": "company-frontend",
+  "cli": {
+    "analytics": false
+  }
 }
