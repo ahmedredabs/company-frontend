@@ -1,5 +1,5 @@
 export class Company {
-  id = '';
-  name = '';
-  password = '';
+  id: string = '';
+  name: string = '';
+  password: string = '';
 }
