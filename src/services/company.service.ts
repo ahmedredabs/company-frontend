@@ -6,8 +6,8 @@ import {environment} from '../environments/environment';
 @Injectable()
 export class CompanyService {
 
-  private companyRegisterUrl: string;
-  private companyLoginUrl: string;
+  private readonly companyRegisterUrl: string;
+  private readonly companyLoginUrl: string;
 
   constructor(private http: HttpClient) {
     this.companyRegisterUrl = environment.DOMAIN + ':' + environment.PORT_LOCAL + '/company/register';

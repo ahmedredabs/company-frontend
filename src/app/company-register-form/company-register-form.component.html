@@ -3,7 +3,7 @@
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #companyRegisterForm="ngForm">
       <div class="form-group">
-        <label for="name">message</label>
+        <label for="name">name</label>
         <input type="text" [(ngModel)]="company.name" class="form-control" id="name" message="name"
                placeholder="Enter your company name" name="name" required #name="ngModel">
         <label for="password">password</label>

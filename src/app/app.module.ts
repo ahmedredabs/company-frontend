@@ -8,12 +8,14 @@ import {CompanyRegisterFormComponent} from './company-register-form/company-regi
 import {CompanyLoginFormComponent} from './company-login-form/company-login-form.component';
 import {CompanyService} from '../services/company.service';
 import {HttpClientModule} from '@angular/common/http';
+import { CompanyQrcodeFormComponent } from './company-qrcode-form/company-qrcode-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CompanyRegisterFormComponent,
-    CompanyLoginFormComponent
+    CompanyLoginFormComponent,
+    CompanyQrcodeFormComponent
   ],
   imports: [
     BrowserModule,
