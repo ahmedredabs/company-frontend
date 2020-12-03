@@ -4,27 +4,28 @@ import {CompanyService} from '../../services/company.service';
 import {Company} from '../../model/company';
 
 @Component({
-  selector: 'app-company-register-form',
-  templateUrl: './company-register-form.component.html',
-  styleUrls: ['./company-register-form.component.sass']
+  selector: 'app-company-login-form',
+  templateUrl: './company-login-form.component.html',
+  styleUrls: ['./company-login-form.component.sass']
 })
-export class CompanyRegisterFormComponent {
+export class CompanyLoginFormComponent {
 
   company: Company;
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private companyRegisterService: CompanyService
+    private companyLoginService: CompanyService
   ) {
     this.company = new Company();
   }
 
   onSubmit(){
-    this.companyRegisterService.save(this.company).subscribe(result => this.goToHome());
+    this.companyLoginService.login(this.company).subscribe(result => this.goToQRCodeGenerator());
   }
 
-  goToHome(){
+  // TODO !
+  goToQRCodeGenerator(){
     this.router.navigate(['/']);
   }
 
