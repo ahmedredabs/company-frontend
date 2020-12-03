@@ -1,0 +1,16 @@
+<div class="card my-5">
+  <h1 class="card-title text-center">Welcome to the Register Form</h1>
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #companyRegisterForm="ngForm">
+      <div class="form-group">
+        <label for="name">message</label>
+        <input type="text" [(ngModel)]="company.name" class="form-control" id="name" message="name"
+               placeholder="Enter your company name" name="name" required #name="ngModel">
+        <label for="password">password</label>
+        <input type="password" [(ngModel)]="company.password" class="form-control" id="password" message="password"
+               placeholder="Enter your company password" name="password" required #password="ngModel">
+      </div>
+      <button type="submit" [disabled]="!companyRegisterForm.form.valid" class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>
