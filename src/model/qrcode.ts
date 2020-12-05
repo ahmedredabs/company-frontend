@@ -1,5 +1,4 @@
 export class Qrcode {
-  id: '' | undefined;
-  placeName: string = '';
-  placeDescription: string = '';
+  id: string = '';
+  location: string = '';
 }

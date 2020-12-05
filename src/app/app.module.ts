@@ -4,18 +4,18 @@ import {FormsModule} from '@angular/forms';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {CompanyRegisterFormComponent} from './company-register-form/company-register-form.component';
-import {CompanyLoginFormComponent} from './company-login-form/company-login-form.component';
-import {CompanyService} from '../services/company.service';
+import {EstablishmentRegisterFormComponent} from './establishment-register-form/establishment-register-form.component';
+import {EstablishmentLoginFormComponent} from './establishment-login-form/establishment-login-form.component';
+import {EstablishmentService} from '../services/establishment.service';
 import {HttpClientModule} from '@angular/common/http';
-import { CompanyQrcodeFormComponent } from './company-qrcode-form/company-qrcode-form.component';
+import { EstablishmentQrcodeFormComponent } from './establishment-qrcode-form/establishment-qrcode-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CompanyRegisterFormComponent,
-    CompanyLoginFormComponent,
-    CompanyQrcodeFormComponent
+    EstablishmentRegisterFormComponent,
+    EstablishmentLoginFormComponent,
+    EstablishmentQrcodeFormComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +23,7 @@ import { CompanyQrcodeFormComponent } from './company-qrcode-form/company-qrcode
     HttpClientModule,
     FormsModule
   ],
-  providers: [CompanyService],
+  providers: [EstablishmentService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

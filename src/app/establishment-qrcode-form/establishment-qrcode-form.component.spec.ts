@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CompanyQrcodeFormComponent } from './company-qrcode-form.component';
+import { EstablishmentQrcodeFormComponent } from './establishment-qrcode-form.component';
 
 describe('CompanyQrcodeFormComponent', () => {
-  let component: CompanyQrcodeFormComponent;
-  let fixture: ComponentFixture<CompanyQrcodeFormComponent>;
+  let component: EstablishmentQrcodeFormComponent;
+  let fixture: ComponentFixture<EstablishmentQrcodeFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CompanyQrcodeFormComponent ]
+      declarations: [ EstablishmentQrcodeFormComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CompanyQrcodeFormComponent);
+    fixture = TestBed.createComponent(EstablishmentQrcodeFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
