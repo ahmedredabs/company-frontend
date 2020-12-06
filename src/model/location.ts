@@ -1,4 +1,4 @@
-import {Establishment} from './establishment';
+import { Establishment } from './establishment';
 
 export class Location {
   id: string = '';
