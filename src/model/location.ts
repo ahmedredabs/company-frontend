@@ -4,5 +4,5 @@ export class Location {
   id: string = '';
   name: string = '';
   description: string = '';
-  establishment: string | null = '';
+  establishment: Establishment = new Establishment();
 }

@@ -28,11 +28,9 @@ export class EstablishmentService {
     return this.http.post<Establishment>(this.establishmentLoginUrl, establishment, {observe: 'response'});
   }
 
-  public getEstablishment(establishmentId: string){
-    return this.http.get<Establishment>(this.establishmentGenerateQRCodeUrl, );
-  }
-
   public generateNewQRCode(qrcode: Qrcode) {
+    console.log('Je passe dans generateNewQRCode');
+    console.log(qrcode);
     return this.http.post<Qrcode>(this.establishmentGenerateQRCodeUrl, qrcode, {observe: 'response'});
   }
 

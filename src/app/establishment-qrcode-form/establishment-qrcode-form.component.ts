@@ -26,11 +26,18 @@ export class EstablishmentQrcodeFormComponent {
   // TODO !!!
   // A tester !!!
   onSubmit() {
-    this.location.establishment = localStorage.getItem('establishmentId');
-    console.log(this.location.establishment);
-    this.companyQrcodeGeneratorService.generateNewLocation(this.location).subscribe(response => console.log(response.status));
-    this.qrcode.location = this.location.id;
-    this.companyQrcodeGeneratorService.generateNewQRCode(this.qrcode);
+    this.location.establishment.id = localStorage.getItem('establishmentId');
+    this.companyQrcodeGeneratorService.generateNewLocation(this.location).subscribe(response => {
+      console.log(response.status);
+      console.log(response.body);
+      if (response.body !== null) {
+        this.qrcode.location.id = response.body.id;
+        // this.qrcode.location.establishment.id = localStorage.getItem('establishmentId');
+        console.log('this.qrcode.location.id : ' + this.qrcode.location.id);
+        console.log(this.qrcode);
+        this.companyQrcodeGeneratorService.generateNewQRCode(this.qrcode).subscribe(response2 => console.log(response2.status));
+      }
+    });
   }
 
 }

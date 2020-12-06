@@ -26,8 +26,11 @@ export class EstablishmentLoginFormComponent {
         if (result.status === 200) {
           this.goToQRCodeGenerator();
           if (result.body !== null){
+            console.log(result.body.id);
             const establishmentId = result.body.id;
-            localStorage.setItem('establishmentId', establishmentId);
+            if (establishmentId != null) {
+              localStorage.setItem('establishmentId', establishmentId);
+            }
           }
         }
       },
