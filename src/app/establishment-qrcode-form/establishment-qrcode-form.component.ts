@@ -32,8 +32,8 @@ export class EstablishmentQrcodeFormComponent {
       if (response.body !== null) {
         this.qrcode.location.id = response.body.id.toString();
         // this.qrcode.location.establishment.id = localStorage.getItem('establishmentId');
-        this.qrcode.location.establishment = new Establishment();
-        this.companyQrcodeGeneratorService.generateNewQRCode(this.qrcode).subscribe(response2 => response2.status);
+        // this.qrcode.location.establishment = new Establishment();
+        this.companyQrcodeGeneratorService.generateNewQRCode(this.qrcode).subscribe(response2 => console.log(response2.status));
       }
     });
   }
