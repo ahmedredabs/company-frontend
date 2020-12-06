@@ -1,0 +1,16 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #companyQrcodeForm="ngForm">
+      <div class="form-group">
+        <label for="name">location name</label>
+        <input type="text" [(ngModel)]="location.name" class="form-control" id="name" message="placeName"
+               placeholder="Enter your company's location name" name="name" required #name="ngModel">
+        <label for="description">location description</label>
+        <input type="text" [(ngModel)]="location.description" class="form-control" id="description" message="description"
+               placeholder="Enter your company's location description" name="description" required #description="ngModel">
+      </div>
+      <button type="submit" class="btn btn-info">Generate</button>
+      <button type="submit" [disabled]="!companyQrcodeForm.form.valid" class="btn btn-info">Generate with location</button>
+    </form>
+  </div>
+</div>
