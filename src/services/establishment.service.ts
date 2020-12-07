@@ -29,12 +29,10 @@ export class EstablishmentService {
   }
 
   public generateNewQRCode(qrcode: Qrcode) {
-    console.log('Qrcode= ', qrcode);
     return this.http.post<Qrcode>(this.establishmentGenerateQRCodeUrl, qrcode, { observe: 'response' });
   }
 
   public generateNewLocation(location: Location) {
-    console.log('Location= ', location);
     return this.http.post<Location>(this.establishmentGenerateNewLocation, location, { observe: 'response' });
   }
 

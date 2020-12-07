@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
-
+import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {EstablishmentRegisterFormComponent} from './establishment-register-form/establishment-register-form.component';
@@ -21,6 +21,7 @@ import { EstablishmentQrcodeFormComponent } from './establishment-qrcode-form/es
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgxQRCodeModule,
     FormsModule
   ],
   providers: [EstablishmentService],
