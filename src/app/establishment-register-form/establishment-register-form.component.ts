@@ -22,12 +22,12 @@ export class EstablishmentRegisterFormComponent {
 
   onSubmit(){
     this.companyRegisterService.save(this.establishment).subscribe(result => {
-      this.goToHome();
+      this.goToLogin();
     });
   }
 
-  goToHome(){
-    this.router.navigate(['/']);
+  goToLogin(){
+    this.router.navigate(['/login']);
   }
 
 }
