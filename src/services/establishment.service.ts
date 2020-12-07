@@ -1,9 +1,9 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {environment} from '../environments/environment';
-import {Qrcode} from '../model/qrcode';
-import {Establishment} from '../model/establishment';
-import {Location} from '../model/location';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../environments/environment';
+import { Qrcode } from '../model/qrcode';
+import { Establishment } from '../model/establishment';
+import { Location } from '../model/location';
 
 @Injectable()
 export class EstablishmentService {
@@ -21,24 +21,21 @@ export class EstablishmentService {
   }
 
   public save(establishment: Establishment) {
-    return this.http.post<Establishment>(this.establishmentRegisterUrl, establishment, {observe: 'response'});
+    return this.http.post<Establishment>(this.establishmentRegisterUrl, establishment, { observe: 'response' });
   }
 
   public login(establishment: Establishment) {
-    return this.http.post<Establishment>(this.establishmentLoginUrl, establishment, {observe: 'response'});
-  }
-
-  public getEstablishment(establishmentId: string){
-    return this.http.get<Establishment>(this.establishmentGenerateQRCodeUrl, );
+    return this.http.post<Establishment>(this.establishmentLoginUrl, establishment, { observe: 'response' });
   }
 
   public generateNewQRCode(qrcode: Qrcode) {
-    return this.http.post<Qrcode>(this.establishmentGenerateQRCodeUrl, qrcode, {observe: 'response'});
+    console.log('Qrcode= ', qrcode);
+    return this.http.post<Qrcode>(this.establishmentGenerateQRCodeUrl, qrcode, { observe: 'response' });
   }
 
   public generateNewLocation(location: Location) {
-    console.log('Je passe dans generateNewLocation');
-    return this.http.post<Location>(this.establishmentGenerateNewLocation, location, {observe: 'response'});
+    console.log('Location= ', location);
+    return this.http.post<Location>(this.establishmentGenerateNewLocation, location, { observe: 'response' });
   }
 
 }

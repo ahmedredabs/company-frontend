@@ -1,4 +1,6 @@
+import {Location} from './location';
+
 export class Qrcode {
   id: string = '';
-  location: string = '';
+  location: Location = new Location();
 }
