@@ -34,14 +34,14 @@ export class EstablishmentQrcodeFormComponent {
       .subscribe((response) => {
         if (response.body !== null) {
           this.qrcode.location.id = response.body.id.toString();
-          this.value=this.qrcode.location.id;
+          this.value="LocationID\n"+this.qrcode.location.id;
           this.companyQrcodeGeneratorService
             .generateNewQRCode(this.qrcode)
             .subscribe((response2) => {
               if (response2.status === 200) {
                 if (response2.body !== null) {
                   this.isValided=true
-                this.value+="\n"+response2.body.id.toString()
+                this.value+="\nQrCodeID\n"+response2.body.id.toString()
                
                 }
               }
