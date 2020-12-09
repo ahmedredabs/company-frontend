@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  title = 'company-frontend';
+  title = 'BlockCovid';
   router: Router;
 
   constructor(
@@ -15,4 +15,11 @@ export class AppComponent {
   ) {
     this.router = r;
   }
+
+  onLogout(){
+    console.log(window.sessionStorage.length);
+    window.sessionStorage.clear();
+    console.log(window.sessionStorage.length);
+  }
+
 }

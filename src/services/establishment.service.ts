@@ -25,6 +25,7 @@ export class EstablishmentService {
   }
 
   public login(establishment: Establishment) {
+    console.log(establishment);
     return this.http.post<Establishment>(this.establishmentLoginUrl, establishment, { observe: 'response' });
   }
 

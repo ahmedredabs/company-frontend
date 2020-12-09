@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { EstablishmentService } from '../../services/establishment.service';
-import { Qrcode } from '../../model/qrcode';
-import { Location } from '../../model/location';
-import { NgxQrcodeElementTypes, NgxQrcodeErrorCorrectionLevels } from '@techiediaries/ngx-qrcode';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {EstablishmentService} from '../../services/establishment.service';
+import {Qrcode} from '../../model/qrcode';
+import {Location} from '../../model/location';
+import {NgxQrcodeElementTypes} from '@techiediaries/ngx-qrcode';
 
 @Component({
   selector: 'app-company-qrcode-form',
@@ -13,10 +13,10 @@ import { NgxQrcodeElementTypes, NgxQrcodeErrorCorrectionLevels } from '@techiedi
 export class EstablishmentQrcodeFormComponent {
   qrcode: Qrcode;
   location: Location;
-  elementType=NgxQrcodeElementTypes.URL;
-  correctionLevel=NgxQrcodeErrorCorrectionLevels.HIGH;
-  value= "";
-  isValided =false;
+  elementType = NgxQrcodeElementTypes.URL;
+  value = '';
+  showQrCode = false;
+  href = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -28,25 +28,29 @@ export class EstablishmentQrcodeFormComponent {
   }
 
   onSubmit() {
-    this.location.establishment.id = localStorage.getItem('establishmentId');
+    this.location.establishment.id = sessionStorage.getItem('establishmentId');
     this.companyQrcodeGeneratorService
       .generateNewLocation(this.location)
       .subscribe((response) => {
         if (response.body !== null) {
           this.qrcode.location.id = response.body.id.toString();
-          this.value="LocationID\n"+this.qrcode.location.id;
+          this.value = 'LocationID\n' + this.qrcode.location.id;
           this.companyQrcodeGeneratorService
             .generateNewQRCode(this.qrcode)
             .subscribe((response2) => {
               if (response2.status === 200) {
                 if (response2.body !== null) {
-                  this.isValided=true
-                this.value+="\nQrCodeID\n"+response2.body.id.toString()
-               
+                  this.showQrCode = true;
+                  this.value += '\nQrCodeID\n' + response2.body.id.toString();
                 }
               }
             });
         }
       });
   }
+
+  downloadQRCode() {
+    this.href = document.getElementsByTagName('img')[0].src;
+  }
+
 }

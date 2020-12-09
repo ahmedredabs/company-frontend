@@ -1,7 +1,12 @@
-<div *ngIf="isValided" class="row container-fluid" id="QrCodeZone">
-  <p>Here your QRCode</p>
-  <ngx-qrcode [elementType]="elementType" [value]="value" cssClass="bshadow">
-  </ngx-qrcode>
+<div *ngIf="showQrCode" class="card text-white bg-success mb-3" style="max-width: 13rem; ">
+  <div class="card-header">Here's your QR Code :</div>
+  <div class="card-body">
+    <div class="row container-fluid" id="QrCodeZone">
+      <ngx-qrcode [elementType]="elementType" [value]="value" cssClass="bshadow">
+      </ngx-qrcode>
+    </div>
+    <a class="text-dark" [href]="href"  (click)="downloadQRCode()" download>Download Image</a>
+  </div>
 </div>
 <div class="card my-5">
   <div class="card-body">
@@ -14,7 +19,7 @@
           class="form-control"
           id="name"
           message="placeName"
-          placeholder="Enter your company's location name"
+          placeholder="Enter the name of the location"
           name="name"
           required
           #name="ngModel"
@@ -26,7 +31,7 @@
           class="form-control"
           id="description"
           message="description"
-          placeholder="Enter your company's location description"
+          placeholder="Enter the description of the location"
           name="description"
           required
           #description="ngModel"
@@ -37,7 +42,7 @@
         type="submit"
         [disabled]="!companyQrcodeForm.form.valid"
         class="btn btn-info">
-        Generate with location
+        Generate with location details
       </button>
     </form>
   </div>
