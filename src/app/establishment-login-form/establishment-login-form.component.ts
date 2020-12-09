@@ -28,7 +28,8 @@ export class EstablishmentLoginFormComponent {
           if (result.body !== null){
             const establishmentId = result.body.id;
             if (establishmentId != null) {
-              localStorage.setItem('establishmentId', establishmentId);
+              sessionStorage.setItem('establishmentId', establishmentId);
+              sessionStorage.setItem('establishmentName', result.body.name);
             }
           }
         }
