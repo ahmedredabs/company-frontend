@@ -1,14 +1,14 @@
-<p>company-login-form works!</p>
 <div class="card my-5">
+  <h1 class="card-title text-center">Welcome to the Login Form</h1>
   <div class="card-body">
     <form (ngSubmit)="onSubmit()" #companyLoginForm="ngForm">
       <div class="form-group">
         <label for="name">name</label>
         <input type="text" [(ngModel)]="company.name" class="form-control" id="name" message="name"
-               placeholder="Enter your company name" name="name" required #name="ngModel">
+               placeholder="Enter your establishment name" name="name" required #name="ngModel">
         <label for="password">password</label>
         <input type="password" [(ngModel)]="company.password" class="form-control" id="password" message="password"
-               placeholder="Enter your company password" name="password" required #password="ngModel">
+               placeholder="Enter your establishment password" name="password" required #password="ngModel">
       </div>
       <button type="submit" [disabled]="!companyLoginForm.form.valid" class="btn btn-info">Submit</button>
     </form>
