@@ -14,10 +14,10 @@ export class EstablishmentService {
   private readonly establishmentGenerateNewLocation: string;
 
   constructor(private http: HttpClient) {
-    this.establishmentRegisterUrl = environment.DOMAIN + ':' + environment.PORT_LOCAL + '/establishment/register';
-    this.establishmentLoginUrl = environment.DOMAIN + ':' + environment.PORT_LOCAL + '/establishment/login';
-    this.establishmentGenerateQRCodeUrl = environment.DOMAIN + ':' + environment.PORT_LOCAL + '/establishment/qrcode';
-    this.establishmentGenerateNewLocation = environment.DOMAIN + ':' + environment.PORT_LOCAL + '/establishment/location';
+    this.establishmentRegisterUrl = environment.DOMAIN + '/establishment/register';
+    this.establishmentLoginUrl = environment.DOMAIN + '/establishment/login';
+    this.establishmentGenerateQRCodeUrl = environment.DOMAIN + '/establishment/qrcode';
+    this.establishmentGenerateNewLocation = environment.DOMAIN + '/establishment/location';
   }
 
   public save(establishment: Establishment) {
